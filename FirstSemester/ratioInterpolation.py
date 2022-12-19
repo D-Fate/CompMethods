@@ -48,7 +48,7 @@ def test_function(x: float) -> float:
     return (x**3 - 2 * x**2 + x - 3) / (4 * x**2 - 5 * x + 5)
 
 
-if __name__ == '__main__':
+def main():
     n = 5
     point = 1.5
     points = [i for i in range(n + 1)]
@@ -59,3 +59,7 @@ if __name__ == '__main__':
     interpolation_value = ratio_interpolation(point, points, values, 3, 2)
     print('Значение интерполяции:', interpolation_value)
     print('Абсолютная точность:', abs(function_value - interpolation_value))
+
+
+if __name__ == '__main__':
+    main()

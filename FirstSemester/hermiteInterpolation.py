@@ -40,5 +40,9 @@ def hermite(point: float, func_table: List[List[float]],
     return interpolation_polynomial
 
 
-if __name__ == '__main__':
+def main():
     hermite(TARGET_POINT, TARGET_FUNCTION_TABLE)
+
+
+if __name__ == '__main__':
+    main()

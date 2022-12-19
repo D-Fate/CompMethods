@@ -36,7 +36,7 @@ def composite_simpson_rule(func, start, end, frequency=10000, precision=10e-9):
     return integral2, iterations
 
 
-if __name__ == '__main__':
+def main():
     precise_value = 2
     n = int(input('Введите стартовое чётное число отрезков разбиения: '))
     p = (15 / 16) * float(input('Введите точность: '))
@@ -48,3 +48,7 @@ if __name__ == '__main__':
     print('Ожидаемый результат:', precise_value)
     print('Результат вычислений:', target_value)
     print('Абсолютная точность:', abs(target_value - precise_value))
+
+
+if __name__ == '__main__':
+    main()

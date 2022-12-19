@@ -3,10 +3,10 @@ import numpy as np
 
 TARGET_MATRIX = [
     [1, 2, 0, 0, 0],
-    [4, 5, 6, 0, 0],
-    [0, 7, 8, 9, 0],
-    [0, 0, 10, 11, 12],
-    [0, 0, 0, 13, 14]
+    [3, 4, 5, 0, 0],
+    [0, 6, 7, 8, 0],
+    [0, 0, 9, 10, 11],
+    [0, 0, 0, 12, 13]
 ]
 
 TARGET_UPPER = [TARGET_MATRIX[i][i + 1] for i in range(len(TARGET_MATRIX) - 1)]
@@ -54,7 +54,7 @@ def tridiagonal_matrix_algorithm(upper, main,
     return result
 
 
-if __name__ == '__main__':
+def main():
     print('Матрица:')
     print(*TARGET_MATRIX, sep='\n', end='\n\n')
     print('Верхняя диагональ:', *TARGET_UPPER)
@@ -65,3 +65,7 @@ if __name__ == '__main__':
     print('Решение:', tridiagonal_matrix_algorithm(
         TARGET_UPPER, TARGET_MAIN, TARGET_LOWER, TARGET_TERMS
     ))
+
+
+if __name__ == '__main__':
+    main()

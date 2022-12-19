@@ -1,7 +1,6 @@
 import numpy as np
 from typing import List
 from copy import deepcopy
-from datetime import datetime
 
 
 TARGET_MATRIX = [
@@ -116,7 +115,7 @@ def numpy_gauss(matrix: np.ndarray, terms: np.ndarray,
     return m[:, rank]
 
 
-if __name__ == '__main__':
+def main():
     print('Чистый Гаусс.')
     test_matrix = TARGET_MATRIX
     test_terms = [sum(i) for i in test_matrix]
@@ -132,3 +131,7 @@ if __name__ == '__main__':
     print('Матрица:', *test_matrix, sep='\n')
     print('Столбец свободных коэффициентов:', test_terms)
     print('Решение:', numpy_gauss(test_matrix, test_terms))
+
+
+if __name__ == '__main__':
+    main()

@@ -22,7 +22,7 @@ def newton(point: float, x: list or tuple, y: list or tuple) -> float:
     return interpolation_polynomial
 
 
-if __name__ == '__main__':
+def main():
     # ввод степени
     deg = int(input('Введите степень многочлена: '))
     while deg < 1:
@@ -62,3 +62,7 @@ if __name__ == '__main__':
 
     # вывод погрешности
     print('Погрешность интерполяции:', error)
+
+
+if __name__ == '__main__':
+    main()

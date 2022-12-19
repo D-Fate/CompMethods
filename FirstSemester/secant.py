@@ -21,6 +21,9 @@ def secant(f, start, end, precision=0.00001) -> Tuple[float, int]:
         iterations += 1
     return next, iterations
 
+def main():
+    print('Корень = {0}, кол-во итераций = {1}'.format(*secant(sin, 3, 4)))
+
 
 if __name__ == '__main__':
-    print('Корень = {0}, кол-во итераций = {1}'.format(*secant(sin, 3, 4)))
+    main()

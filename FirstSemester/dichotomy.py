@@ -28,5 +28,9 @@ def dichotomy(f, start, end, precision=0.00001) -> Tuple[None | float, int]:
     return None, iterations
 
 
+def main():
+    print('Корень = {0}, кол-во итераций = {1}'.format(*dichotomy(sin, 3, 4)))
+
+
 if __name__ == '__main__':
-    print('Корень = {0}, кол-во итераций = {1}'.format(*dichotomy(sin(x), 3, 4)))
+    main()

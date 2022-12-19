@@ -54,8 +54,12 @@ def monte_carlo_integration_2(func, dimensions, frequency=1000000, rng=None):
     return np.sum(block_counters) / frequency
 
 
-if __name__ == '__main__':
+def main():
     n = int(input('Введите количество значений случайной величины: '))
     print('Метод 1:', monte_carlo_integration_1(test_function, 2, frequency=n))
     print('Метод 2:', monte_carlo_integration_2(test_function, 2, frequency=n))
     print('Ожидаемый результат:', 4 / (np.pi * np.pi))
+
+
+if __name__ == '__main__':
+    main()
