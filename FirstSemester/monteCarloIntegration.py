@@ -1,10 +1,8 @@
 # тестируй на 10^8
 
 import numpy as np
-from numba import njit
 
 
-@njit(fastmath=True)
 def test_function(x, y):
     return np.sin(np.pi * x) * np.cos(np.pi * y / 2)
 
