@@ -1,7 +1,7 @@
 from math import factorial
 
 
-def newton(point: float, x: list or tuple, y: list or tuple) -> float:
+def newton(point: float, x: list | tuple, y: list | tuple) -> float:
     """
         Функция возвращает значение интерполяционного многочлена Ньютона в
         точке point. Многочлен задаётся массивами x и y узловых точек и

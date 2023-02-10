@@ -1,7 +1,7 @@
 from math import factorial
 
 
-def lagrange(point: float, x: list or tuple, y: list or tuple) -> float:
+def lagrange(point: float, x: list | tuple, y: list | tuple) -> float:
     """
         Функция возвращает значение интерполяционного многочлена Лагранжа в
         точке point. Многочлен задаётся массивами x и y узловых точек и
