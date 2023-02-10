@@ -1,9 +1,9 @@
-# тестируй на 10^8
+# проверяй на 10^8
 
 import numpy as np
 
 
-def test_function(x, y):
+def demo_function(x, y):
     return np.sin(np.pi * x) * np.cos(np.pi * y / 2)
 
 
@@ -54,8 +54,8 @@ def monte_carlo_integration_2(func, dimensions, frequency=1000000, rng=None):
 
 def main():
     n = int(input('Введите количество значений случайной величины: '))
-    print('Метод 1:', monte_carlo_integration_1(test_function, 2, frequency=n))
-    print('Метод 2:', monte_carlo_integration_2(test_function, 2, frequency=n))
+    print('Метод 1:', monte_carlo_integration_1(demo_function, 2, frequency=n))
+    print('Метод 2:', monte_carlo_integration_2(demo_function, 2, frequency=n))
     print('Ожидаемый результат:', 4 / (np.pi * np.pi))
 
 
