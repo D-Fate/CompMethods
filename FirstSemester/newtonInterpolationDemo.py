@@ -7,7 +7,7 @@ TARGET_POINT = 3.14159265358
 TARGET_POINTS = [2.8, 3, 3.1, 3.3]
 
 
-def newton_test(f, error_const, deg, point=None, points=None, label=''):
+def newton_demo(f, error_const, deg, point=None, points=None, label=''):
     if label:
         print(label)
     # подготовка значений для расчета интерполяции
@@ -34,8 +34,8 @@ def newton_test(f, error_const, deg, point=None, points=None, label=''):
 
 
 if __name__ == '__main__':
-    newton_test(f=lambda x: x ** 3, error_const=0, deg=3,
-                point=TARGET_POINT, points=TARGET_POINTS, label='Тест x^3.')
+    newton_demo(f=lambda x: x ** 3, error_const=0, deg=3,
+                point=TARGET_POINT, points=TARGET_POINTS, label='y = x^3')
     print()
-    newton_test(f=sin, error_const=1, deg=4,
-                point=TARGET_POINT, points=TARGET_POINTS, label='Тест sin(x).')
+    newton_demo(f=sin, error_const=1, deg=4,
+                point=TARGET_POINT, points=TARGET_POINTS, label='y = sin(x)')

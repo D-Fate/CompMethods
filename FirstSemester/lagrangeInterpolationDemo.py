@@ -1,4 +1,4 @@
-from FirstSemester.lagrangeInterpolation import lagrange
+from lagrangeInterpolation import lagrange
 from math import sin, factorial
 from random import uniform
 
@@ -7,7 +7,7 @@ TARGET_POINT = None
 TARGET_POINTS = None
 
 
-def lagrange_test(f, error_const, deg, point=None, points=None, label=''):
+def lagrange_demo(f, error_const, deg, point=None, points=None, label=''):
     if label:
         print(label)
     # подготовка значений для расчета интерполяции
@@ -34,6 +34,6 @@ def lagrange_test(f, error_const, deg, point=None, points=None, label=''):
 
 
 if __name__ == '__main__':
-    lagrange_test(f=lambda x: x**3, error_const=0, deg=3, label='Тест x^3.')
+    lagrange_demo(f=lambda x: x**3, error_const=0, deg=3, label='y = x^3')
     print()
-    lagrange_test(f=sin, error_const=1, deg=4, label='Тест sin(x).')
+    lagrange_demo(f=sin, error_const=1, deg=4, label='y = sin(x)')
