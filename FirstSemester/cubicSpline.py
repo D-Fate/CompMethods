@@ -10,23 +10,23 @@ def safe_float(s: str) -> float | None:
         return None
 
 
-TEST_NAME = ('sin(x)', 'x^3', '|x|^3')
-TEST_FUNCTION = (np.sin, lambda x: x**3, lambda x: abs(x)**3)
+DEMO_NAME = ('sin(x)', 'x^3', '|x|^3')
+DEMO_FUNCTION = (np.sin, lambda x: x ** 3, lambda x: abs(x) ** 3)
 
 TARGET_POINTS = (
-    np.arange(0, 2 * np.pi, 1),  # test 1
-    [2, 3, 5, 6],                # test 2
-    [-2, -1, 0, 1, 2]            # test 3
+    np.arange(0, 2 * np.pi, 1),  # demo 1
+    [2, 3, 5, 6],                # demo 2
+    [-2, -1, 0, 1, 2]            # demo 3
 )
 
-TARGET_VALUES = [[TEST_FUNCTION[i](TARGET_POINTS[i][j])
+TARGET_VALUES = [[DEMO_FUNCTION[i](TARGET_POINTS[i][j])
                   for j in range(len(TARGET_POINTS[i]))]
-                 for i in range(len(TEST_FUNCTION))]
+                 for i in range(len(DEMO_FUNCTION))]
 
 TARGET_BOUNDARY_CONDITIONS = (
-    ((1, 0, 1), (0, 1, 1)),     # test 1
-    ((1, 1, 24), (1, 1, 144)),  # test 2
-    ((1, 1, 60), (1, 1, 84))    # test 3
+    ((1, 0, 1), (0, 1, 1)),     # demo 1
+    ((1, 1, 24), (1, 1, 144)),  # demo 2
+    ((1, 1, 60), (1, 1, 84))    # demo 3
 )
 
 
@@ -123,16 +123,16 @@ class CubeSpline:
 
 
 def main():
-    for i in range(len(TEST_FUNCTION)):
-        print(f'Тест {i + 1}:', TEST_NAME[i])
-        test_spline = CubeSpline(TARGET_POINTS[i], TARGET_VALUES[i],
+    for i in range(len(DEMO_FUNCTION)):
+        print(f'Демо {i + 1}:', DEMO_NAME[i])
+        demo_spline = CubeSpline(TARGET_POINTS[i], TARGET_VALUES[i],
                                  TARGET_BOUNDARY_CONDITIONS[i][0],
                                  TARGET_BOUNDARY_CONDITIONS[i][1])
         interpolation_point = safe_float(input('Введите точку интерполяции: '))
-        test_spline.show(interpolation_point)
+        demo_spline.show(interpolation_point)
         if interpolation_point is not None:
-            spline_value = test_spline.calculate(interpolation_point)
-            function_value = TEST_FUNCTION[i](interpolation_point)
+            spline_value = demo_spline.calculate(interpolation_point)
+            function_value = DEMO_FUNCTION[i](interpolation_point)
             print('Значение сплайна в точке интерполяции:', spline_value)
             print('Значение интерполируемой функции в точке интерполяции:',
                   function_value)
