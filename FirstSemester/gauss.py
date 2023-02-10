@@ -117,20 +117,20 @@ def numpy_gauss(matrix: np.ndarray, terms: np.ndarray,
 
 def main():
     print('Чистый Гаусс.')
-    test_matrix = TARGET_MATRIX
-    test_terms = [sum(i) for i in test_matrix]
-    print('Матрица:', *test_matrix, sep='\n')
-    print('Столбец свободных коэффициентов:', test_terms)
-    print('Решение:', vanilla_gauss(test_matrix, test_terms))
+    demo_matrix = TARGET_MATRIX
+    demo_terms = [sum(i) for i in demo_matrix]
+    print('Матрица:', *demo_matrix, sep='\n')
+    print('Столбец свободных коэффициентов:', demo_terms)
+    print('Решение:', vanilla_gauss(demo_matrix, demo_terms))
 
     print()
 
     print('NumPy Гаусс.')
-    test_matrix = np.array(TARGET_MATRIX, dtype=np.float64)
-    test_terms = np.array([sum(i) for i in test_matrix], dtype=np.float64)
-    print('Матрица:', *test_matrix, sep='\n')
-    print('Столбец свободных коэффициентов:', test_terms)
-    print('Решение:', numpy_gauss(test_matrix, test_terms))
+    demo_matrix = np.array(TARGET_MATRIX, dtype=np.float64)
+    demo_terms = np.array([sum(i) for i in demo_matrix], dtype=np.float64)
+    print('Матрица:', *demo_matrix, sep='\n')
+    print('Столбец свободных коэффициентов:', demo_terms)
+    print('Решение:', numpy_gauss(demo_matrix, demo_terms))
 
 
 if __name__ == '__main__':
