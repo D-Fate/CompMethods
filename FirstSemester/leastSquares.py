@@ -11,7 +11,7 @@ M = 2
 FREQUENCY = 10e-5
 
 
-def calculate_polynom(coefficients: np.array, point: np.float64):
+def calculate_polynom(coefficients: np.array, point: float) -> float:
     result = 0
     for i in np.arange(len(coefficients)):
         result += coefficients[i] * point ** i
@@ -34,13 +34,13 @@ def main():
                 s += X[k] ** (i + j)
             g[i, j] = s
 
-    print('Матрица G:')
+    print('Матрица Грама:')
     print(*g, sep='\n')
 
     print()
 
     a = np.linalg.inv(g).dot(f)
-    print('Столбец A:')
+    print('Коэффициенты найденного многочлена:')
     print(a)
 
     polynom_points = np.arange(-10, 10, FREQUENCY)
