@@ -39,6 +39,9 @@ def composite_simpson_rule(func, start, end, frequency=10000, precision=10e-9):
 def main():
     precise_value = 2
     n = int(input('Введите стартовое чётное число отрезков разбиения: '))
+    while n % 2 != 0:
+        print('Ошибка ввода!')
+        n = int(input('Введите стартовое чётное число отрезков разбиения: '))
     p = (15 / 16) * float(input('Введите точность: '))
 
     target_value, iterations = \
