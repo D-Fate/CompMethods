@@ -26,7 +26,7 @@ TARGET_VALUES = [[DEMO_FUNCTION[i](TARGET_POINTS[i][j])
 TARGET_BOUNDARY_CONDITIONS = (
     ((1, 0, 1), (0, 1, 1)),     # demo 1
     ((1, 1, 24), (1, 1, 144)),  # demo 2
-    ((1, 1, 60), (1, 1, 84))    # demo 3
+    ((1, 1, 0), (1, 1, 24))    # demo 3
 )
 
 
