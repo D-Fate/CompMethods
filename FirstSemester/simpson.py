@@ -49,7 +49,7 @@ def main():
 
     target_value, iterations = composite_simpson_rule(
             np.sin, 0, np.pi, frequency=n, precision=p, debug=True
-        )
+    )
 
     print('Количество шагов:', iterations)
     print('Ожидаемый результат:', precise_value)

@@ -63,6 +63,14 @@ def main():
     plt.ylim(ymin=0, ymax=1.25)
     plt.title('cos')
 
+    plt.figure(3)
+    plt.plot(polynom_points, func_values - polynom_values, 'r')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.xlim(xmin=A, xmax=B)
+    plt.ylim(ymin=0, ymax=1.25)
+    plt.title('cos - p')
+
     plt.show()
 
 

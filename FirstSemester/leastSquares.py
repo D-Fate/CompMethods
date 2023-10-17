@@ -2,13 +2,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-X = np.array([-8, -4, 0, 1, 2, 3])
-Y = np.array([-5, -3, 0, 2, 1, 3])
+# X = np.array([-8, -4, 0, 1, 2, 3])
+# Y = np.array([-5, -3, 0, 2, 1, 3])
+
+X = np.arange(-np.pi / 2, np.pi / 2, np.pi / 31)
+Y = [np.cos(p) for p in X]
+
+M = 5
 
 N = len(X)
-M = 2
+# M = 2
 
-FREQUENCY = 10e-5
+FREQUENCY = 31
 
 
 def calculate_polynom(coefficients: np.array, point: float) -> float:
@@ -40,6 +45,7 @@ def main():
     print()
 
     a = np.linalg.inv(g).dot(f)
+
     print('Коэффициенты найденного многочлена:')
     print(a)
 
@@ -51,8 +57,8 @@ def main():
     plt.plot(polynom_points, polynom_values, 'g', X, Y, 'rx')
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.xlim(xmin=-10, xmax=10)
-    plt.ylim(ymin=-10, ymax=10)
+    plt.xlim(xmin=-np.pi / 2, xmax=np.pi / 2)
+    plt.ylim(ymin=-0.1, ymax=1.25)
     plt.show()
 
 
