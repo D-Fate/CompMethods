@@ -5,7 +5,7 @@ def f(x, y):
     return y + x * np.exp(x)
 
 
-def test_solution(x, x0, y0):
+def exact_solution(x, x0, y0):
     c = np.exp(-x0) * (y0 - 1/2 * x0 ** 2)
     return np.exp(x) * (1/2 * x ** 2 + c)
 
@@ -50,7 +50,7 @@ def main():
     x, y = solve_cauchy(x0, y0, h, end, f, precision)
     print(f'Значение узла: {x}\n'
           f'Приближенное решение: {y}\n'
-          f'Погрешность: {np.abs(y - test_solution(end, x0, y0))}')
+          f'Погрешность: {np.abs(y - exact_solution(end, x0, y0))}')
 
 
 if __name__ == '__main__':
