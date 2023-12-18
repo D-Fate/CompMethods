@@ -38,14 +38,14 @@ def solve_cauchy(x, y, h, end, func, precision=10e-5):
 
 
 def main():
-    x0, end = tuple(map(
+    x0, end = map(
         float,
         input('Введите левую и правую границы отрезка (x0, X)\n>> ').split()
-    ))
-    y0, h = tuple(map(
+    )
+    y0, h = map(
         float,
         input('Введите начальное значение y0 и шаг h0 через пробел\n>> ').split()
-    ))
+    )
     precision = float(input('Введите точность\n>> '))
     x, y = solve_cauchy(x0, y0, h, end, f, precision)
     print(f'Значение узла: {x}\n'
