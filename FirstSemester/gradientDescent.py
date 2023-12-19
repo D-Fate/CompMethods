@@ -32,7 +32,7 @@ def main():
     print('Значения функции:', DEMO_FUNC_VALUES)
 
     result = gradient_descent(DEMO_FUNC_VALUES, DEMO_MATRIX, np.zeros(N))
-    print(result)
+    print('Градиентный спуск:', result)
 
 
 if __name__ == '__main__':
