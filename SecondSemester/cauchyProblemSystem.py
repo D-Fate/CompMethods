@@ -58,7 +58,7 @@ def main():
     )
     u0, v0 = map(
         float,
-        input('Введите начальные значения y0 через пробел\n>> ').split()
+        input('Введите начальные значения u0 и v0 через пробел\n>> ').split()
     )
     h = float(input('Введите шаг h0\n>> '))
     precision = float(input('Введите точность\n>> '))
