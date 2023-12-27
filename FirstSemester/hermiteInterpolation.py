@@ -10,8 +10,9 @@ TARGET_FUNCTION_TABLE = [
 ]
 
 
+# TODO: когда-нибудь закончить
 def hermite(point: float, func_table: List[List[float]],
-            precision=0.00001) -> float:
+            precision=10e-5) -> float:
     deg = len(func_table[0]) - 1
     # создание и инициализация таблицы разделённых разностей
     diff_table = [[0] * (deg + 2 - i) for i in range(deg + 1)]

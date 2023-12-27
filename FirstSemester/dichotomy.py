@@ -2,7 +2,7 @@ from typing import Tuple
 from math import sin
 
 
-def dichotomy(f, start, end, precision=0.00001) -> Tuple[None | float, int]:
+def dichotomy(f, start, end, precision=10e-5) -> Tuple[None | float, int]:
     """
         Функция возвращает решение уравнения f(x) = 0 на заданном интервале с
         точностью, равной precision, полученное методом дихотомии.

@@ -2,14 +2,14 @@ import numpy as np
 from scipy.linalg import solve
 
 
-def f(x, u, v) -> np.ndarray:
+def _target_func(x, u, v) -> np.ndarray:
     return np.array([
         u - v + np.exp(x) * (1 + x * x),
         u + v + np.exp(x) * x
     ])
 
 
-def exact_solution(x, x0: float, u0: float, v0: float) -> np.ndarray:
+def _exact_solution(x, x0: float, u0: float, v0: float) -> np.ndarray:
     a = [[np.cos(x0), np.sin(x0)], [np.sin(x0), -np.cos(x0)]]
     b = [[u0 / np.exp(x0) - x0], [v0 / np.exp(x0) - x0 ** 2]]
     c = solve(a, b).flatten()
@@ -62,8 +62,8 @@ def main():
     )
     h = float(input('Введите шаг h0\n>> '))
     precision = float(input('Введите точность\n>> '))
-    x, u, v = solve_cauchy(x0, u0, v0, h, end, f, precision)
-    exact_u, exact_v = exact_solution(x, x0, u0, v0)
+    x, u, v = solve_cauchy(x0, u0, v0, h, end, _target_func, precision)
+    exact_u, exact_v = _exact_solution(x, x0, u0, v0)
     print(f'Значение узла: {x}\n'
           f'Приближенное решение: ({u}, {v})\n'
           f'Погрешность: {(u - exact_u, v - exact_v)}')

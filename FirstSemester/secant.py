@@ -2,7 +2,7 @@ from typing import Tuple
 from math import sin
 
 
-def secant(f, start, end, precision=0.00001) -> Tuple[float, int]:
+def secant(f, start, end, precision=10e-5) -> Tuple[float, int]:
     """
         Функция возвращает решение уравнения f(x) = 0 на заданном интервале с
         точностью, равной precision, полученное методом секущих.
@@ -20,6 +20,7 @@ def secant(f, start, end, precision=0.00001) -> Tuple[float, int]:
             (f(current) - f(previous)) * f(current)
         iterations += 1
     return next, iterations
+
 
 def main():
     print('Корень = {0}, кол-во итераций = {1}'.format(*secant(sin, 3, 4)))

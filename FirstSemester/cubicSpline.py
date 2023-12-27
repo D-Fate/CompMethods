@@ -82,10 +82,10 @@ class CubeSpline:
         point_i_minus_point = self._points[interval_start + 1] - point
         point_minus_point_i_minus_1 = point - self._points[interval_start]
         return (  # вычисление сплайна
-            (  # 1-ое слагаемое
+            (  # 1-е слагаемое
                 self._coefficients[interval_start] *
                 point_i_minus_point ** 3 / (6 * points_diff)
-            ) + (  # 2-ое
+            ) + (  # 2-е
                 self._coefficients[interval_start + 1] *
                 point_minus_point_i_minus_1 ** 3 / (6 * points_diff)
             ) + (  # 3-е
@@ -93,7 +93,7 @@ class CubeSpline:
                  self._coefficients[interval_start] *
                  points_diff ** 2 / 6) *
                 point_i_minus_point / points_diff
-            ) + (  # 4-ое
+            ) + (  # 4-е
                 (self._values[interval_start + 1] -
                  self._coefficients[interval_start + 1] *
                  points_diff ** 2 / 6) *

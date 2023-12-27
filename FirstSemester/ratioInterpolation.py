@@ -4,7 +4,7 @@ from FirstSemester.gauss import vanilla_gauss
 
 def ratio_interpolation(point: float, points: List[float], values: List[float],
                         numerator_deg: int, denominator_deg: int,
-                        gauss_error=0.00001) -> float | None:
+                        gauss_precision=10e-5) -> float | None:
     """
         Функция возвращает значение интерполяции в точке point. Дробно-
         рациональная функция задаётся массивами points и values узловых точек и
@@ -23,7 +23,7 @@ def ratio_interpolation(point: float, points: List[float], values: List[float],
             matrix[i][j] = matrix[i][j - 1] * points[i]
     terms = [-(points[i] ** numerator_deg) for i in range(len(points))]
     # поиск коэффициентов и проверка их наличия
-    coefficients = vanilla_gauss(matrix, terms, gauss_error)
+    coefficients = vanilla_gauss(matrix, terms, gauss_precision)
     if not coefficients:
         return None
     print('Коэффициенты числителя:', 1, *coefficients[denominator_deg::-1])

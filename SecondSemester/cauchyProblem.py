@@ -1,11 +1,11 @@
 import numpy as np
 
 
-def f(x, y):
+def _target_func(x, y):
     return y + x * np.exp(x)
 
 
-def exact_solution(x, x0, y0):
+def _exact_solution(x, x0, y0):
     c = np.exp(-x0) * (y0 - 1/2 * x0 ** 2)
     return np.exp(x) * (1/2 * x ** 2 + c)
 
@@ -47,10 +47,10 @@ def main():
         input('Введите начальное значение y0 и шаг h0 через пробел\n>> ').split()
     )
     precision = float(input('Введите точность\n>> '))
-    x, y = solve_cauchy(x0, y0, h, end, f, precision)
+    x, y = solve_cauchy(x0, y0, h, end, _target_func, precision)
     print(f'Значение узла: {x}\n'
           f'Приближенное решение: {y}\n'
-          f'Погрешность: {np.abs(y - exact_solution(end, x0, y0))}')
+          f'Погрешность: {np.abs(y - _exact_solution(end, x0, y0))}')
 
 
 if __name__ == '__main__':

@@ -13,7 +13,7 @@ TARGET_MATRIX = [
 
 
 def vanilla_gauss(matrix: List[List[float]], terms: List[float],
-                  error=0.00001) -> List[float] | None:
+                  precision=10e-5) -> List[float] | None:
     """
         Функция возвращает решение системы линейных уравнений, заданной
         матрицей matrix и столбцом свободных коэффициентов terms. Решение
@@ -34,7 +34,7 @@ def vanilla_gauss(matrix: List[List[float]], terms: List[float],
                 pivot = abs(_matrix[j][i])
                 pivot_i = j
         # вернуть None, если опорный элемент меньше допустимой точности
-        if pivot < error:
+        if pivot < precision:
             return None
         # перестановка строк
         _matrix[i], _matrix[pivot_i] = _matrix[pivot_i], _matrix[i].copy()
@@ -43,7 +43,7 @@ def vanilla_gauss(matrix: List[List[float]], terms: List[float],
         for j in range(rank):
             temp = _matrix[j][i]
             # пропускаем нулевой элемент
-            if abs(temp) < error:
+            if abs(temp) < precision:
                 continue
             for k in range(rank):
                 _matrix[j][k] *= temp ** (-1)
@@ -61,7 +61,7 @@ def vanilla_gauss(matrix: List[List[float]], terms: List[float],
         for j in range(rank - 1, -1, -1):
             temp = _matrix[j][i]
             # пропускаем нулевой элемент
-            if abs(temp) < error:
+            if abs(temp) < precision:
                 continue
             for k in range(rank):
                 _matrix[j][k] *= temp ** (-1)
@@ -77,7 +77,7 @@ def vanilla_gauss(matrix: List[List[float]], terms: List[float],
 
 
 def numpy_gauss(matrix: np.ndarray, terms: np.ndarray,
-                precision=0.00001) -> np.ndarray | None:
+                precision=10e-5) -> np.ndarray | None:
     """
         Функция возвращает решение системы линейных уравнений, заданной
         матрицей matrix и столбцом свободных коэффициентов terms. Решение
